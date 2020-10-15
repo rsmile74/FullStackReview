@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+    <title th:text="${magazine.title}">Best Fashion Magazines : Refactoring</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+<section class="magazine-details">
+    <h1 class="magazine-details__title" th:text="${magazine.title}">Refactoring</h1>
+    <h2 class="magazine-details__editor" th:each="editor: ${magazine.editors}"
+        th:text="${editor.firstName}+' '+ ${editor.lastName}">Anna Wintour</h2>
+    <p class="magazine-details__summary" th:text="${magazine.description}">
+        The original book on refactoring code.
+    </p>
+</section>
+<!--<div th:each="hashtag : ${book.hashTags}" th:text = "${hashtag.name}"></div>-->
+<br>
+<ul>
+    <p><a href="/editors">See All the Editors</a></p>
+<br>
+
+    <img th:src="${magazine.image}"/>
+<br>
+    <li th:text="${magazine.title}"></li>
+</ul>
+
+<!--<h2 th:text="${magazine.description}"></h2>-->
+
+
+<!--<form th:action="'/magazine/' + ${magazine.id} + '/add-hashtag'" method="POST">-->
+<!--    <input name = "hashTagName" type="text">-->
+<!--    <button type="submit">Add Hashtag</button>-->
+<!--</form>-->
+
+
+
+<br>
+<a class="nav__home" th:href="'/offices/'+${magazine.office.location}">Back to Home</a>
+</body>
+</html>

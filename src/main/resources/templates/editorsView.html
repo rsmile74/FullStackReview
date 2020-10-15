@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editors</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+
+</head>
+<body>
+
+<p><a href="/offices">Back ToHome</a></p>
+<br>
+
+<p><a href="/magazines">View the fashion shows of these top contributors</a></p>
+
+<h1>Editors and Chiefs</h1>
+
+
+
+<div class ="column" th:each="editor:${editors}">
+
+    <img th:src="${editor.image}"/>
+</div>
+
+
+
+
+</body>
+</html>

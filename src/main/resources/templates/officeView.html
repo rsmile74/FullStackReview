@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+
+    <title>Fashion Magazine Review</title>
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+<header class="header">
+    <h1 class="header__title">Fashion Magazine Reviews</h1>
+
+    <h2 th:text="${office.location}">Location</h2>
+</header>
+<section class="magazine-list">
+    <h2 class="magazine-list__heading">Here is a list of the Best Fashion Magazines:</h2>
+    <nav class="magazine-list-nav">
+        <ul class="magazine-list-links">
+            <li class="magazine-list-links__magazine" th:each="magazine:${office.magazines}">
+                <a class="magazine-list-links__link" th:href="@{'/magazines/'+ ${magazine.id}}"
+                   th:text="${magazine.title}">Refactoring</a>
+            </li>
+
+        </ul>
+    </nav>
+
+
+
+
+    <a class="nav__home" href="/offices">Back Home</a>
+<!--    <form method="POST" th:action="'/offices/'+ ${office.location} + '/add-magazine'">-->
+<!--        <input name="officeId" th:value="${office.id}" type="hidden">-->
+<!--        <input type="text">-->
+<!--    </form>-->
+</section>
+</body>
+
+</html>

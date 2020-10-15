@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <title>Office</title>
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link href="/css/layout.css" rel="stylesheet">
+</head>
+
+<body>
+<h1>Search here for your favorite Fashion Magazine</h1>
+<br>
+<h2>These fashion magazines are located in the top two cities, NewYork and LosAngles</h2>
+<h2>Click Either New York or LosAngeles to find out more about the magazines and the editors.</h2>
+<h2>Also check out the fabulous fashion videos.</h2>
+<br>
+<br>
+
+
+<h2 th:each="office:${offices}"><a th:href="@{'/offices/'+ ${office.location}}"
+                                   th:text="${office.location}">Headquarters</a>
+</h2>
+
+<div class="grid-container">
+    <img th:src="@{/images/elle.jpg}"/>
+    <img th:src="@{/images/flaunt.jpg}"/>
+    <img th:src="@{/images/vouge.jpg}"/>
+    <img th:src="@{/images/instyle.jpg}"/>
+    <img th:src="@{/images/harpers.jpg}"/>
+    <img th:src="@{/images/glamour.jpg}"/>
+</div>
+
+<form action="add-office" method="POST">
+    <input name="location" type="text">
+    <button type="submit">Search for more fashion magazines</button>
+</form>
+
+</body>
+
+</html>
