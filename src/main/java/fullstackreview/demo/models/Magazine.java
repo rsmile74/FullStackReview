@@ -50,7 +50,7 @@ public class Magazine {
 
     }
 
-    public Magazine(String title, String description, String images, Office office, Editor... editors) { //using the VarArgs operator to list as many authors as you want
+    public Magazine(String title, String description, String images, Office office, Editor ...editors) { //using the VarArgs operator to list as many authors as you want
         this.title = title;
         this.description=description;
         this.images=images;

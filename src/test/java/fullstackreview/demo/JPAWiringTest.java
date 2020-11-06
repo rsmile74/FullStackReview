@@ -36,9 +36,9 @@ public class JPAWiringTest {
     public void locationShouldHaveAListOfTheBiggestMagazines(){
         Office testOffice = new Office("Test Location");//build a new class called headquarters and build out the constructor
         Office testOffice2 = new Office("Test Location2");
-        Editor testEditor1 = new Editor("Test firstName", "Test lastName");
-        Magazine testMagazine = new Magazine("Title", "Description", testOffice, testEditor1);
-        Magazine testMagazine2 = new Magazine("Title", "Description", testOffice2, testEditor1);
+        Editor testEditor1 = new Editor("Test firstName", "Test lastName", "String images");
+        Magazine testMagazine = new Magazine("Title", "Description", "images",testOffice );
+        Magazine testMagazine2 = new Magazine("Title", "Description", "images", testOffice2);
         //each table that we create we need to save the items to the database and the CRUD Repo will do that so it will need a Repository
 
 
@@ -60,11 +60,11 @@ public class JPAWiringTest {
     @Test
     public void magazineShouldBeAbleToHaveMultipleEditors(){
         Office testOffice = new Office("Test Location");
-        Editor testEditor1 = new Editor("Test firstName", "Test lastName");
-        Editor testEditor2 = new Editor("Test firstName2", "Test lastName2");
-        Magazine testMagazine1 = new Magazine("Title", "Description", testOffice, testEditor1, testEditor2);
-        Magazine testMagazine2 = new Magazine("Title", "Description", testOffice, testEditor1);
-        Magazine testMagazine3 = new Magazine("Title", "Description", testOffice, testEditor2);
+        Editor testEditor1 = new Editor("Test firstName", "Test lastName","images");
+        Editor testEditor2 = new Editor("Test firstName2", "Test lastName2" ,"images");
+        Magazine testMagazine1 = new Magazine("Title", "Description", "images",testOffice);
+        Magazine testMagazine2 = new Magazine("Title", "Description", "images",testOffice);
+        Magazine testMagazine3 = new Magazine("Title", "Description", "images",testOffice);
         officeRepo.save(testOffice);
         editorRepo.save(testEditor1);
         editorRepo.save(testEditor2);
